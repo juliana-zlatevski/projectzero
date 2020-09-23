@@ -27,13 +27,7 @@ As time progresses, the alien will grow in age and its physical appearance will 
 Users have the option to replay as often as they like using the retry icon on the top right. If a user forgets the rules, they may open them up at any time by clicking on the question mark icon on the top right.
 
 ## Wireframes
-![img](imgs/welcome.png "Welcome")
-![img](imgs/gamestart.png "Game Start")
 
-<p align="center">
-  <img src="imgs/welcome.png" width="350">
-  <img src="imgs/gamestart.png" width="350">
-</p>
 
 ## Technologies
 HTML, CSS, JS
