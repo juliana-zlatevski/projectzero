@@ -24,7 +24,8 @@ h1 {
     font-size: 54px;
     text-transform: uppercase;
     margin-bottom: 20px;
-    background: -webkit-linear-gradient(rgb(136, 69, 245), rgb(79, 248, 212));
+    padding-bottom: 40px;
+    background: -webkit-linear-gradient(rgb(136, 69, 245), rgb(228, 163, 79));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -45,7 +46,7 @@ h1 {
     width: 40%;
     /* border: 3px solid green; */
     margin-top: 50px;
-    margin-right: 5px;
+    /* margin-right: 5px; */
 
 }
 
@@ -104,4 +105,32 @@ h1 {
     font-weight: 500;
     font-size: 18px;
     letter-spacing: 0px;
+}
+
+.button-box {
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eat-btn, .sleep-btn, .play-btn {
+    font-size: 90px;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    border: 3px solid black;
+    border-radius: 50%;
+    color: #000;
+    /* background: -webkit-linear-gradient(rgb(136, 69, 245), rgb(79, 248, 212));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.eat-btn, .sleep-btn {
+    width: 160px;
+    border-radius: 50%;
 }
