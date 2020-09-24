@@ -20,6 +20,7 @@ $('.popup-btn').on('click', () => {
     createAlien();
     startTimer();
     $('.popup-overlay').hide();
+    $('.alien-img').addClass('animate__animated animate__backInDown');
 })
 
 // bringing back overlay pop-up message
@@ -54,8 +55,8 @@ const startTimer = function() {
         if (time < 25) {
             time++;
             age += 4;
-            $('.time').text(time);
-            $('.age').text(age);
+            $('.time').text(time + ' s');
+            $('.age').text(age + ' yrs old');
         }
     }, 1000);
 }
