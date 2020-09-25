@@ -65,6 +65,8 @@ const startTimer = function() {
             time++;
             age += 2;
 
+
+            if (time < 50 && hunger < 10 && sleepiness < 10 && boredom < 10) {
             if (time % 5 === 0) {
                 hunger += 2;
             }
@@ -76,6 +78,16 @@ const startTimer = function() {
             if (time % 2 === 0) {
                 boredom += 1;
             }
+        } else if (time < 50 && hunger >= 10) {
+            alert('alien died of hunger!');
+            clearInterval(timer);
+        } else if (time < 50 && sleepiness >= 10) {
+            alert('alien died of sleepiness!');
+            clearInterval(timer);
+        } else if (time < 50 && boredom >= 10) {
+            alert('alien died of boredom!');
+            clearInterval(timer);
+        }
 
             $('.time').text(time + ' s');
             $('.age').text(age + ' yrs old');
