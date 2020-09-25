@@ -2,8 +2,14 @@
 
 const startAge = 0;
 const startTime = 0;
+const startHunger = 1;
+const startSleepiness = 1;
+const startBoredom = 1;
 let time = startTime; 
 let age = startAge;
+let hunger = startHunger;
+let sleepiness = startSleepiness;
+let boredom = startBoredom;
 
 // removing overlay pop-up message
 
@@ -17,6 +23,9 @@ $('.popup-btn').on('click', () => {
     const $playerName = $('.popup-name').val();
     $('.name').text($playerName);
     $('.age').text(startAge);
+    $('.hunger-count').text(startHunger);
+    $('.sleepiness-count').text(startSleepiness);
+    $('.boredom-count').text(startBoredom);
     createAlien();
     startTimer();
     $('.popup-overlay').hide();
@@ -52,11 +61,28 @@ function createAlien () {
 
 const startTimer = function() {
     const timer = setInterval(function() {
-        if (time < 25) {
+        if (time < 50) {
             time++;
-            age += 4;
+            age += 2;
+
+            if (time % 5 === 0) {
+                hunger += 2;
+            }
+
+            if (time % 10 === 0) {
+                sleepiness += 3;
+            }
+
+            if (time % 2 === 0) {
+                boredom += 1;
+            }
+
             $('.time').text(time + ' s');
             $('.age').text(age + ' yrs old');
+            $('.hunger-count').text(hunger);
+            $('.sleepiness-count').text(sleepiness);
+            $('.boredom-count').text(boredom);
+
         }
     }, 1000);
 }
