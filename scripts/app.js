@@ -58,16 +58,16 @@ function createAlien () {
     console.log(player);
 }
 
-// timer and age incrementer 
+// timer, age, and health decrementer/incrementer 
 
 const startTimer = function() {
     const timer = setInterval(function() {
-        if (time < 50) {
+        if (time <= 50) {
             time++;
             age += 2;
 
 
-            if (time < 50 && hunger < 10 && sleepiness < 10 && boredom < 10) {
+            if (time <= 50 && hunger < 10 && sleepiness < 10 && boredom < 10) {
             if (time % 5 === 0) {
                 hunger += 2;
             }
@@ -79,15 +79,17 @@ const startTimer = function() {
             if (time % 2 === 0) {
                 boredom += 1;
             }
-        } else if (time < 50 && hunger >= 10) {
+        } else if (time <= 50 && hunger >= 10) {
             alert('alien died of hunger!');
             clearInterval(timer);
-        } else if (time < 50 && sleepiness >= 10) {
+        } else if (time <= 50 && sleepiness >= 10) {
             alert('alien died of sleepiness!');
             clearInterval(timer);
-        } else if (time < 50 && boredom >= 10) {
+        } else if (time <= 50 && boredom >= 10) {
             alert('alien died of boredom!');
             clearInterval(timer);
+        } else {
+            alert(`yay! i've lived a full alien life`);
         }
 
             $('.time').text(time + ' s');
@@ -99,3 +101,29 @@ const startTimer = function() {
         }
     }, 1000);
 }
+
+// game buttons
+
+$('.eat-btn').on('click', () => {
+    if (hunger > 0) {
+        hunger--;
+    } else {
+        alert('pls stop i am full');
+    }
+})
+
+$('.sleep-btn').on('click', () => {
+    if (sleepiness > 0) {
+        sleepiness--;
+    } else {
+        alert('sleep is 4 the weak lol');
+    }
+})
+
+$('.play-btn').on('click', () => {
+    if (boredom > 0) {
+        boredom--;
+    } else {
+        alert(`i've already beat that game like 4 times...`)
+    }
+})
