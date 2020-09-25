@@ -35,6 +35,7 @@ $('.popup-btn').on('click', () => {
 // bringing back overlay pop-up message
 
 $('.help-btn').on('click', () => {
+    $('.alien-img').removeClass('animate__animated animate__backInDown');
     $('.popup-overlay').show();
 })
 
