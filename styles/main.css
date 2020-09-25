@@ -218,10 +218,14 @@ h1 {
     /* border: 1px solid #000; */
     width: 90%;
     padding-left: 10%;
+    /* background: red; */
     /* padding-top: 0; */
 }
 
 .bar {
-    border: 3px solid black;
+    border: 0px solid #e7e6e6;
     height: 20px;
+    background-image: linear-gradient(to right, #7ce34d, #91e246, #a4e140, #b5e03c, #c5de3a, #d2d129, #dec41c, #e8b716, #ee9a0f, #f07c1c, #ed5d2b, #e53939);
+    width: 100%;
+    border-radius: 10px;
 }
