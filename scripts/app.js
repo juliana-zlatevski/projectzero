@@ -23,9 +23,12 @@ $('.popup-btn').on('click', () => {
     const $playerName = $('.popup-name').val();
     $('.name').text($playerName);
     $('.age').text(startAge);
-    $('.hunger-count').text(startHunger);
-    $('.sleepiness-count').text(startSleepiness);
-    $('.boredom-count').text(startBoredom);
+    // $('.hunger-count').text(startHunger);
+    // $('.sleepiness-count').text(startSleepiness);
+    // $('.boredom-count').text(startBoredom);
+    $('.hunger-bar').css('width', '0%');
+    $('.sleep-bar').css('width', '0%');
+    $('.boredom-bar').css('width', '0%');
     createAlien();
     startTimer();
     $('.popup-overlay').hide();
@@ -66,7 +69,6 @@ const startTimer = function() {
             time++;
             age += 2;
 
-
             if (time <= 50 && hunger < 10 && sleepiness < 10 && boredom < 10) {
             if (time % 5 === 0) {
                 hunger += 2;
@@ -79,6 +81,7 @@ const startTimer = function() {
             if (time % 2 === 0) {
                 boredom += 1;
             }
+
         } else if (time <= 50 && hunger >= 10) {
             alert('alien died of hunger!');
             clearInterval(timer);
@@ -89,14 +92,19 @@ const startTimer = function() {
             alert('alien died of boredom!');
             clearInterval(timer);
         } else {
+            clearInterval(timer);
             alert(`yay! i've lived a full alien life`);
         }
 
             $('.time').text(time + ' s');
             $('.age').text(age + ' yrs old');
-            $('.hunger-count').text(hunger);
-            $('.sleepiness-count').text(sleepiness);
-            $('.boredom-count').text(boredom);
+            // $('.hunger-count').text(hunger);
+            // $('.sleepiness-count').text(sleepiness);
+            // $('.boredom-count').text(boredom);
+
+            updateHungerBar();
+            updateSleepBar();
+            updateBoredomBar();
 
         }
     }, 1000);
@@ -127,3 +135,84 @@ $('.play-btn').on('click', () => {
         alert(`i've already beat that game like 4 times...`)
     }
 })
+
+// status bar functionality
+// hunger
+
+function updateHungerBar() {
+    if (hunger == 0) {
+        $('.hunger-bar').css('width', '0%');
+        } else if (hunger == 1) {
+        $('.hunger-bar').css('width', '10%');
+        } else if (hunger == 2) {
+        $('.hunger-bar').css('width', '20%');
+        } else if (hunger == 3) {
+            $('.hunger-bar').css('width', '30%');
+        } else if (hunger == 4) {
+            $('.hunger-bar').css('width', '40%');
+        } else if (hunger == 5) {
+            $('.hunger-bar').css('width', '50%');
+        } else if (hunger == 6) {
+            $('.hunger-bar').css('width', '60%');
+        } else if (hunger == 7) {
+            $('.hunger-bar').css('width', '70%');
+        } else if (hunger == 8) {
+            $('.hunger-bar').css('width', '80%');
+        } else if (hunger == 9) {
+            $('.hunger-bar').css('width', '90%');
+        } else if (hunger == 10) {
+            $('.hunger-bar').css('width', '100%');
+        }
+}
+
+function updateSleepBar() {
+    if (sleepiness == 0) {
+        $('.sleep-bar').css('width', '0%');
+        } else if (sleepiness == 1) {
+        $('.sleep-bar').css('width', '10%');
+        } else if (sleepiness == 2) {
+        $('.sleep-bar').css('width', '20%');
+        } else if (sleepiness == 3) {
+            $('.sleep-bar').css('width', '30%');
+        } else if (sleepiness == 4) {
+            $('.sleep-bar').css('width', '40%');
+        } else if (sleepiness == 5) {
+            $('.sleep-bar').css('width', '50%');
+        } else if (sleepiness == 6) {
+            $('.sleep-bar').css('width', '60%');
+        } else if (sleepiness == 7) {
+            $('.sleep-bar').css('width', '70%');
+        } else if (sleepiness == 8) {
+            $('.sleep-bar').css('width', '80%');
+        } else if (sleepiness == 9) {
+            $('.sleep-bar').css('width', '90%');
+        } else if (sleepiness == 10) {
+            $('.sleep-bar').css('width', '100%');
+        }
+}
+
+function updateBoredomBar() {
+    if (boredom == 0) {
+        $('.boredom-bar').css('width', '0%');
+        } else if (boredom == 1) {
+        $('.boredom-bar').css('width', '10%');
+        } else if (boredom == 2) {
+        $('.boredom-bar').css('width', '20%');
+        } else if (boredom == 3) {
+            $('.boredom-bar').css('width', '30%');
+        } else if (boredom == 4) {
+            $('.boredom-bar').css('width', '40%');
+        } else if (boredom == 5) {
+            $('.boredom-bar').css('width', '50%');
+        } else if (boredom == 6) {
+            $('.boredom-bar').css('width', '60%');
+        } else if (boredom == 7) {
+            $('.boredom-bar').css('width', '70%');
+        } else if (boredom == 8) {
+            $('.boredom-bar').css('width', '80%');
+        } else if (boredom == 9) {
+            $('.boredom-bar').css('width', '90%');
+        } else if (boredom == 10) {
+            $('.boredom-bar').css('width', '100%');
+        }
+}
