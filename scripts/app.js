@@ -57,8 +57,6 @@ class AlienPet {
 
 function createAlien () {
     const player = new AlienPet();
-    console.log(`created successfully`);
-    console.log(player);
 }
 
 // timer, age, and health decrementer/incrementer 
@@ -70,44 +68,46 @@ const startTimer = function() {
             age += 2;
 
             if (time <= 50 && hunger < 10 && sleepiness < 10 && boredom < 10) {
-            if (time % 5 === 0) {
+            if (time % 10 === 0) {
                 hunger += 2;
             }
 
-            if (time % 10 === 0) {
+            if (time % 20 === 0) {
                 sleepiness += 3;
             }
 
-            if (time % 2 === 0) {
+            if (time % 4 === 0) {
                 boredom += 1;
             }
 
         } else if (time <= 50 && hunger >= 10) {
             alert('alien died of hunger!');
             clearInterval(timer);
+
         } else if (time <= 50 && sleepiness >= 10) {
             alert('alien died of sleepiness!');
             clearInterval(timer);
+
         } else if (time <= 50 && boredom >= 10) {
             alert('alien died of boredom!');
             clearInterval(timer);
+            
         } else {
             clearInterval(timer);
             alert(`yay! i've lived a full alien life`);
         }
 
+            // to update age and time elapsed on screen
             $('.time').text(time + ' s');
             $('.age').text(age + ' yrs old');
-            // $('.hunger-count').text(hunger);
-            // $('.sleepiness-count').text(sleepiness);
-            // $('.boredom-count').text(boredom);
 
+            // calling on bar updater functions
             updateHungerBar();
             updateSleepBar();
             updateBoredomBar();
 
         }
-    }, 1000);
+    }, 3000);
 }
 
 // game buttons
@@ -136,8 +136,7 @@ $('.play-btn').on('click', () => {
     }
 })
 
-// status bar functionality
-// hunger
+// functions to update status bars
 
 function updateHungerBar() {
     if (hunger == 0) {
