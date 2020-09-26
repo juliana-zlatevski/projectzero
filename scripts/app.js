@@ -23,9 +23,6 @@ $('.popup-btn').on('click', () => {
     const $playerName = $('.popup-name').val();
     $('.name').text($playerName);
     $('.age').text(startAge);
-    // $('.hunger-count').text(startHunger);
-    // $('.sleepiness-count').text(startSleepiness);
-    // $('.boredom-count').text(startBoredom);
     $('.hunger-bar').css('width', '0%');
     $('.sleep-bar').css('width', '0%');
     $('.boredom-bar').css('width', '0%');
@@ -63,11 +60,11 @@ function createAlien () {
 
 const startTimer = function() {
     const timer = setInterval(function() {
-        if (time <= 50) {
+        if (time < 52) {
             time++;
             age += 2;
 
-            if (time <= 50 && hunger < 10 && sleepiness < 10 && boredom < 10) {
+            if (time < 50 && hunger < 10 && sleepiness < 10 && boredom < 10) {
             if (time % 10 === 0) {
                 hunger += 2;
             }
@@ -80,22 +77,23 @@ const startTimer = function() {
                 boredom += 1;
             }
 
-        } else if (time <= 50 && hunger >= 10) {
+        } else if (time < 50 && hunger >= 10) {
             alert('alien died of hunger!');
             clearInterval(timer);
 
-        } else if (time <= 50 && sleepiness >= 10) {
+        } else if (time < 50 && sleepiness >= 10) {
             alert('alien died of sleepiness!');
             clearInterval(timer);
 
-        } else if (time <= 50 && boredom >= 10) {
+        } else if (time < 50 && boredom >= 10) {
             alert('alien died of boredom!');
             clearInterval(timer);
-            
+
         } else {
             clearInterval(timer);
             alert(`yay! i've lived a full alien life`);
         }
+        
 
             // to update age and time elapsed on screen
             $('.time').text(time + ' s');
@@ -107,12 +105,13 @@ const startTimer = function() {
             updateBoredomBar();
 
         }
-    }, 3000);
+    }, 1000);
 }
 
 // game buttons
 
 $('.eat-btn').on('click', () => {
+    $('body').css('background-color', '#fff');
     if (hunger > 0) {
         hunger--;
     } else {
@@ -121,6 +120,7 @@ $('.eat-btn').on('click', () => {
 })
 
 $('.sleep-btn').on('click', () => {
+    $('body').css('background', '-webkit-linear-gradient(rgb(136, 69, 245), rgb(228, 163, 79));');
     if (sleepiness > 0) {
         sleepiness--;
     } else {
@@ -129,6 +129,7 @@ $('.sleep-btn').on('click', () => {
 })
 
 $('.play-btn').on('click', () => {
+    $('body').css('background-color', '#fff');
     if (boredom > 0) {
         boredom--;
     } else {
