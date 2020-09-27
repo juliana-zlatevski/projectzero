@@ -96,7 +96,7 @@ const startTimer = function() {
         
 
             // to update age and time elapsed on screen
-            $('.time').text(time + ' s');
+            $('.time').text(50 - time + ' s');
             $('.age').text(age + ' yrs old');
 
             // calling on bar updater functions
@@ -111,7 +111,13 @@ const startTimer = function() {
 // game buttons
 
 $('.eat-btn').on('click', () => {
-    $('body').css('background-color', '#fff');
+    $('body').css('background-size', 'cover');
+    $('body').css('background-attachment', 'fixed');
+    $('body').css('background-image', 'url(/Users/julianazlatevski/sei/deliverables/project-0/imgs/pexels-free-nature-stock-1376766.jpg)');
+    $('h1').css('color', '#fff');
+    $('.play-btn').css('color', '#FFF');
+    $('.eat-btn').css('color', '#FFF');
+    $('.sleep-btn').css('color', '#FFF');
     if (hunger > 0) {
         hunger--;
     } else {
@@ -120,7 +126,13 @@ $('.eat-btn').on('click', () => {
 })
 
 $('.sleep-btn').on('click', () => {
-    $('body').css('background', '-webkit-linear-gradient(rgb(136, 69, 245), rgb(228, 163, 79));');
+    $('body').css('background-size', 'cover');
+    $('body').css('background-attachment', 'fixed');
+    $('body').css('background-image', 'url(/Users/julianazlatevski/sei/deliverables/project-0/imgs/pexels-min-an-813269.jpg)');
+    $('h1').css('color', '#EBEC4F');
+    $('.play-btn').css('color', '#EBEC4F');
+    $('.eat-btn').css('color', '#EBEC4F');
+    $('.sleep-btn').css('color', '#EBEC4F');
     if (sleepiness > 0) {
         sleepiness--;
     } else {
@@ -129,7 +141,13 @@ $('.sleep-btn').on('click', () => {
 })
 
 $('.play-btn').on('click', () => {
-    $('body').css('background-color', '#fff');
+    $('body').css('background-size', 'cover');
+    $('body').css('background-attachment', 'fixed');
+    $('body').css('background-image', 'url(/Users/julianazlatevski/sei/deliverables/project-0/imgs/pexels-free-nature-stock-1376766.jpg)');
+    $('h1').css('color', '#fff');
+    $('.play-btn').css('color', '#FFF');
+    $('.eat-btn').css('color', '#FFF');
+    $('.sleep-btn').css('color', '#FFF');
     if (boredom > 0) {
         boredom--;
     } else {

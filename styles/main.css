@@ -3,11 +3,22 @@
   }
 
 body {
-    background: #fff;
+    /* background: #fff; */
+    /* background-image: linear-gradient(to right top, #845ec2, #b45cb6, #d65fa5, #ed6993, #fa7a82, #ff8977, #ff9a6e, #ffac69, #ffbe66, #ffd166, #ffe469, #f9f871); */
     font-family: montserrat;
     /* margin: 0; */
     min-height: 100vh;
+    background-image: url("/Users/julianazlatevski/sei/deliverables/project-0/imgs/pexels-free-nature-stock-1376766.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-bottom: -8px;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 
 .popup-overlay {
     background: rgba(0,0,0,0.8);
@@ -34,7 +45,7 @@ body {
     position: absolute;
     top: -5px;
     right: -5px;
-    background: #26C281;
+    background: darkred;
     color: white;
     width: 32px;
     height: 32px;
@@ -50,8 +61,8 @@ body {
 .popup-title {
     font-weight: 100;
     text-align: center;
-    font-family: 'Bungee Shade', cursive;
-    font-size: 28px;
+    font-family: 'Ranchers', cursive;
+    font-size: 40px;
     text-transform: uppercase;
     color: black;
     background: -webkit-linear-gradient(rgb(136, 69, 245), rgb(228, 163, 79));
@@ -80,24 +91,25 @@ body {
     align-items: center;
     text-decoration: none;
     font-size: 30px;
-    color: #000;
+    color: #26C281;
     margin-top: 5px;
 }
 
 h1 {
     font-weight: 100;
     /* border: 1px solid #000; */
+    color: white;
     text-align: center;
-    font-family: 'Bungee Shade', cursive;
-    font-size: 54px;
+    font-family: 'Ranchers', cursive;
+    font-size: 80px;
     text-transform: uppercase;
     margin-left: 80px;
     margin-bottom: 20px;
     padding-bottom: 40px;
-    background: -webkit-linear-gradient(rgb(136, 69, 245), rgb(228, 163, 79));
+    /* background: -webkit-linear-gradient(rgb(136, 69, 245), rgb(228, 163, 79));
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
 }
 
 .main-box {
@@ -125,23 +137,26 @@ h1 {
     float: left; 
     /* border: 1px solid red; */
     margin-top: 60px; 
+    filter: invert(1);
 }
 
 .name-label, .age-label, .time-label {
     font-weight: 500;
     padding-bottom: 10px;
-    margin: 0;
+    margin: 10px;
     text-align: center;
     font-size: 24px;
-    color: #6A46FA;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    border-radius: 10px;
 }
 
 .name, .age, .time {
     font-weight: 500;
     text-transform: lowercase;
-    color: #26C281;
+    color: #fff;
     margin: 0;
     letter-spacing: 0px;
     font-size: 15px;
@@ -151,27 +166,34 @@ h1 {
     /* border: 1px solid #000; */
     width: 30%; 
     margin-top: 0px;
+    /* margin-left: 10px; */
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
 }
 
 .health-label {
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
     letter-spacing: 1px;
-    color: #6A46FA;
+    color: #fff;
 }
 
 .heart{
     display: inline;
     font-family: courier new;
-    font-size: 20px;
+    font-size: 24px;
     padding-right: 4px;
-    color: black;
+    color: rgb(187, 7, 7);
 }
 
 .hunger, .sleepiness, .boredom {
     text-align: center;
-    color: #26C281;
+    color: #fff;
     font-weight: 500;
     font-size: 18px;
     letter-spacing: 0px;
@@ -191,13 +213,13 @@ h1 {
     text-align: center;
     padding: 20px;
     margin: 20px;
-    border: 3px solid black;
+    border: 1px solid #fff;
     border-radius: 50%;
-    color: #000;
+    color: #fff;
 }
 
 .eat-btn, .sleep-btn {
-    width: 140px;
+    width: 130px;
     border-radius: 50%;
 }
 
@@ -210,9 +232,10 @@ h1 {
 }
 
 .retry-btn, .help-btn {
-    color: black;
+    color: #fff;
     font-size: 40px;
     padding: 0px 5px 0 5px;
+    /* margin: 0px 20px 0 0; */
 }
 
 .outline {
