@@ -118,6 +118,10 @@ $('.eat-btn').on('click', () => {
     $('.play-btn').css('color', '#FFF');
     $('.eat-btn').css('color', '#FFF');
     $('.sleep-btn').css('color', '#FFF');
+    $('.alien-img').removeClass('animate__animated animate__rotateOut');
+    $('.alien-img').removeClass('animate__animated animate__backInDown');
+    $('.alien-img').toggleClass('animate__animated animate__shakeY');
+
     if (hunger > 0) {
         hunger--;
     } else {
@@ -133,6 +137,9 @@ $('.sleep-btn').on('click', () => {
     $('.play-btn').css('color', '#EBEC4F');
     $('.eat-btn').css('color', '#EBEC4F');
     $('.sleep-btn').css('color', '#EBEC4F');
+    $('.alien-img').removeClass('animate__animated animate__backInDown');
+    $('.alien-img').addClass('animate__animated animate__rotateOut');
+
     if (sleepiness > 0) {
         sleepiness--;
     } else {
@@ -148,6 +155,10 @@ $('.play-btn').on('click', () => {
     $('.play-btn').css('color', '#FFF');
     $('.eat-btn').css('color', '#FFF');
     $('.sleep-btn').css('color', '#FFF');
+    $('.alien-img').removeClass('animate__animated animate__rotateOut');
+    $('.alien-img').removeClass('animate__animated animate__backInDown');
+    $('.alien-img').addClass('animate__animated animate__rotateIn');
+
     if (boredom > 0) {
         boredom--;
     } else {
