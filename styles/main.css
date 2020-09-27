@@ -135,10 +135,13 @@ h1 {
 .moon-img {
     width: 55%;
     float: left; 
-    /* border: 1px solid red; */
-    margin-top: 60px; 
+    margin-top: 0px; 
     filter: invert(1);
+    background: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 50%;
 }
+
 
 .name-label, .age-label, .time-label {
     font-weight: 500;
@@ -164,8 +167,9 @@ h1 {
 
 .health-box {
     /* border: 1px solid #000; */
-    width: 30%; 
+    width: 28%; 
     margin-top: 0px;
+    margin-left: 2%;
     /* margin-left: 10px; */
     padding: 10px;
     padding-left: 50px;
@@ -248,6 +252,7 @@ h1 {
 .hunger-bar, .sleep-bar, .boredom-bar {
     border: 0px solid #e7e6e6;
     height: 20px;
-    background-image: linear-gradient(to right, #7ce34d, #91e246, #a4e140, #b5e03c, #c5de3a, #d2d129, #dec41c, #e8b716, #ee9a0f, #f07c1c, #ed5d2b, #e53939);
+    background-image: linear-gradient(to right, #845ec2, #a55dbd, #c15db5, #d95fab, #ec64a0, #f76e91, #fd7b84, #ff8a7a, #ffa26e, #ffbd66, #ffda65, #f9f871);
+    /* background-image: linear-gradient(to right, #7ce34d, #91e246, #a4e140, #b5e03c, #c5de3a, #d2d129, #dec41c, #e8b716, #ee9a0f, #f07c1c, #ed5d2b, #e53939); */
     border-radius: 10px;
 }
