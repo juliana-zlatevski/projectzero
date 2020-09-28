@@ -23,9 +23,9 @@ As time progresses, the alien will grow in age and its physical appearance will 
 
 ## Unsolved/To Do
 
-1. Add functionality to the nav bar buttons.\
-2. Add media queries to improve appearance on mobile devices.\
+1. Add functionality to the nav bar buttons.
+2. Add media queries to improve appearance on mobile devices.
 3. Fix button on pop-up div to accept input & begin game if user hits enter instead of only when clicking button.
 
 ## Technologies Used
-HTML, CSS, JS
+HTML, CSS, JS, jQuery

@@ -135,13 +135,14 @@ const startGame = function() {
             $('.time').text(300 - time + ' s');
             $('.age').text(age + ' yrs');
 
+
             // calling on bar updater functions
             updateHungerBar();
             updateSleepBar();
             updateBoredomBar();
 
         }
-    }, 250);
+    }, 1000);
 }
 
 
