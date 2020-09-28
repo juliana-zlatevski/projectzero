@@ -18,8 +18,6 @@ As time progresses, the alien will grow in age and its physical appearance will 
 
 ## Wireframes
 
-![Welcome Screen](imgs/gamestart.png)
-
 ![Welcome Screen](https://i.imgur.com/ESvsE5z.png)
 ![Game Screen](https://i.imgur.com/1A1uvwz.png)
 
