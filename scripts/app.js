@@ -11,13 +11,13 @@ let hunger = startHunger;
 let sleepiness = startSleepiness;
 let boredom = startBoredom;
 
-// removing overlay pop-up message
+// removing overlay pop-up message after user has input name
 
 $('.popup-close').on('click', () => {
     $('.popup-overlay').hide();
 })
 
-// initiating game
+// initiating game after using clicks 'next' button on overlay
 
 $('.popup-btn').on('click', () => {
     const $playerName = $('.popup-name').val();
@@ -27,12 +27,12 @@ $('.popup-btn').on('click', () => {
     $('.sleep-bar').css('width', '0%');
     $('.boredom-bar').css('width', '0%');
     createAlien();
-    startTimer();
+    startGame();
     $('.popup-overlay').hide();
     $('.alien-img').addClass('animate__animated animate__backInDown');
 })
 
-// bringing back overlay pop-up message
+// bringing back overlay pop-up message for instructions or renaming pet
 
 $('.help-btn').on('click', () => {
     $('.alien-img').removeClass('animate__animated animate__backInDown');
@@ -56,48 +56,84 @@ function createAlien () {
     const player = new AlienPet();
 }
 
-// timer, age, and health decrementer/incrementer 
+// game function which includes timer, age, and health decrementer/incrementer 
 
-const startTimer = function() {
+const startGame = function() {
     const timer = setInterval(function() {
-        if (time < 52) {
+        if (time < 300) {
             time++;
-            age += 2;
 
-            if (time < 50 && hunger < 10 && sleepiness < 10 && boredom < 10) {
+            // morphing alien by turning him duller/grayer as time passes
+            if (time % 3 === 0) {
+                age++;
+                    if (age === 25) {
+                        $('.alien-img').css('filter', 'grayscale(25%)');
+                    } else if (age === 50) {
+                        $('.alien-img').css('filter', 'grayscale(50%)');
+                    } else if (age === 75) {
+                        $('.alien-img').css('filter', 'grayscale(75%)');
+                    } else if (age === 99) {
+                        $('.alien-img').css('filter', 'grayscale(99%)');
+                    }
+            }
+
+            // adding a flash effect to alien in the event that any of his health metrics get to dangerous levels
+            if (hunger > 7 || sleepiness > 7 || boredom > 7) {
+                $('.alien-img').removeClass('animate__animated animate__backInDown');
+                $('.alien-img').toggleClass('animate__animated animate__flash');
+            }
+
+            // alien beaming up animation for if/when he reaches 100/user beats game
+            if (age >= 100) {
+                $('.alien-img').removeClass('animate__animated animate__backInDown');
+                $('.alien-img').addClass('animate__animated animate__backOutUp');
+            }
+
+
+            // conditional loop to determine how to increment health levels while time counts down
+            if (time < 300 && hunger < 10 && sleepiness < 10 && boredom < 10) {
             if (time % 10 === 0) {
-                hunger += 2;
+                hunger += 1;
             }
 
             if (time % 20 === 0) {
-                sleepiness += 3;
+                sleepiness += 1;
             }
 
             if (time % 4 === 0) {
                 boredom += 1;
             }
 
-        } else if (time < 50 && hunger >= 10) {
-            alert('alien died of hunger!');
+            // separate conditions in the event that user lets levels reach 10
+        } else if (time < 300 && hunger >= 10) {
+            alert('you let your alien die of hunger!');
+            $('.alien-img').removeClass('animate__animated animate__flash');
+            $('.alien-img').addClass('animate__animated animate__backOutUp');
             clearInterval(timer);
 
-        } else if (time < 50 && sleepiness >= 10) {
-            alert('alien died of sleepiness!');
+        } else if (time < 300 && sleepiness >= 10) {
+            alert('you let your alien die of sleepiness!');
+            $('.alien-img').removeClass('animate__animated animate__flash');
+            $('.alien-img').addClass('animate__animated animate__backOutUp');
             clearInterval(timer);
 
-        } else if (time < 50 && boredom >= 10) {
-            alert('alien died of boredom!');
+        } else if (time < 300 && boredom >= 10) {
+            alert(`you let your alien die of boredom!`);
+            $('.alien-img').removeClass('animate__animated animate__flash');
+            $('.alien-img').addClass('animate__animated animate__backOutUp');
             clearInterval(timer);
 
+            // if levels stay under 10 but alien makes it to 100, user wins game
         } else {
             clearInterval(timer);
-            alert(`yay! i've lived a full alien life`);
+            alert(`Thanks for taking care of me, friend. Goodbye!`);
         }
-        
 
-            // to update age and time elapsed on screen
-            $('.time').text(50 - time + ' s');
-            $('.age').text(age + ' yrs old');
+
+        
+            // to update age and time on screen
+            $('.time').text(300 - time + ' s');
+            $('.age').text(age + ' yrs');
 
             // calling on bar updater functions
             updateHungerBar();
@@ -105,10 +141,12 @@ const startTimer = function() {
             updateBoredomBar();
 
         }
-    }, 1000);
+    }, 250);
 }
 
-// game buttons
+
+
+// game buttons and their functionality/effects on layout
 
 $('.eat-btn').on('click', () => {
     $('body').css('background-size', 'cover');
@@ -118,14 +156,12 @@ $('.eat-btn').on('click', () => {
     $('.play-btn').css('color', '#FFF');
     $('.eat-btn').css('color', '#FFF');
     $('.sleep-btn').css('color', '#FFF');
-    $('.alien-img').removeClass('animate__animated animate__rotateOut');
-    $('.alien-img').removeClass('animate__animated animate__backInDown');
-    $('.alien-img').toggleClass('animate__animated animate__shakeY');
 
     if (hunger > 0) {
         hunger--;
     } else {
-        alert('pls stop i am full');
+        // alien sass message if user goes overboard on buttons
+        alert('plz stop, I am so full');
     }
 })
 
@@ -137,13 +173,12 @@ $('.sleep-btn').on('click', () => {
     $('.play-btn').css('color', '#EBEC4F');
     $('.eat-btn').css('color', '#EBEC4F');
     $('.sleep-btn').css('color', '#EBEC4F');
-    $('.alien-img').removeClass('animate__animated animate__backInDown');
-    $('.alien-img').addClass('animate__animated animate__rotateOut');
 
     if (sleepiness > 0) {
         sleepiness--;
     } else {
-        alert('sleep is 4 the weak lol');
+        // alien sass message if user goes overboard on buttons
+        alert('sleep is for the weak lol');
     }
 })
 
@@ -155,18 +190,16 @@ $('.play-btn').on('click', () => {
     $('.play-btn').css('color', '#FFF');
     $('.eat-btn').css('color', '#FFF');
     $('.sleep-btn').css('color', '#FFF');
-    $('.alien-img').removeClass('animate__animated animate__rotateOut');
-    $('.alien-img').removeClass('animate__animated animate__backInDown');
-    $('.alien-img').addClass('animate__animated animate__rotateIn');
 
     if (boredom > 0) {
         boredom--;
     } else {
-        alert(`i've already beat that game like 4 times...`)
+        // alien sass message if user goes overboard on buttons
+        alert(`I've already beat that game like 4 times...`);
     }
 })
 
-// functions to update status bars
+// functions to update status bars in sync w/ timer and button clicks
 
 function updateHungerBar() {
     if (hunger == 0) {

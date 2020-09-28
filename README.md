@@ -28,6 +28,8 @@ Users have the option to replay as often as they like using the retry icon on th
 
 ## Wireframes
 
+![Welcome Screen] (https://i.imgur.com/ESvsE5z.png)
+![Game Screen] (https://i.imgur.com/1A1uvwz.png)
 
 ## Technologies
 HTML, CSS, JS

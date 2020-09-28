@@ -98,11 +98,12 @@ h1 {
     color: white;
     text-align: center;
     font-family: 'Ranchers', cursive;
-    font-size: 80px;
+    font-size: 70px;
     text-transform: uppercase;
     margin-left: 80px;
-    margin-bottom: 20px;
-    padding-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
     /* background: -webkit-linear-gradient(rgb(136, 69, 245), rgb(228, 163, 79));
     background-clip: text;
     -webkit-background-clip: text;
@@ -202,7 +203,7 @@ h1 {
 
 .button-box {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 0px;
     display: flex;
     justify-content: center;
@@ -253,3 +254,4 @@ h1 {
     /* background-image: linear-gradient(to right, #7ce34d, #91e246, #a4e140, #b5e03c, #c5de3a, #d2d129, #dec41c, #e8b716, #ee9a0f, #f07c1c, #ed5d2b, #e53939); */
     border-radius: 10px;
 }
+
