@@ -1,6 +1,6 @@
 # Project Zero
 
-Project Zero is a modern and virtual take on tamagotchi pets via a web browser. Any user with an internet connection can play without the creation of an account.
+Project Zero is a modern and virtual take on tamagotchi pets via a web browser. Any user with an internet connection can play without the need for creation of an account, and without needing to go through any installation process. The approach taken was to revamp the original game with the addition of an outerspace-y vibe.
 
 ## User Story
 
@@ -21,5 +21,5 @@ As time progresses, the alien will grow in age and its physical appearance will 
 ![Welcome Screen](https://i.imgur.com/ESvsE5z.png)
 ![Game Screen](https://i.imgur.com/1A1uvwz.png)
 
-## Technologies
+## Technologies Used
 HTML, CSS, JS
