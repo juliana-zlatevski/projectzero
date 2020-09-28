@@ -18,14 +18,14 @@ As time progresses, the alien will grow in age and its physical appearance will 
 
 ## Wireframes
 
+![Welcome Screen](https://i.imgur.com/ESvsE5z.png)
+![Game Screen](https://i.imgur.com/1A1uvwz.png)
+
 ## Unsolved/To Do
 
 1. Add functionality to the nav bar buttons.\
 2. Add media queries to improve appearance on mobile devices.\
 3. Fix button on pop-up div to accept input & begin game if user hits enter instead of only when clicking button.
-
-![Welcome Screen](https://i.imgur.com/ESvsE5z.png)
-![Game Screen](https://i.imgur.com/1A1uvwz.png)
 
 ## Technologies Used
 HTML, CSS, JS
