@@ -151,7 +151,7 @@ const startGame = function() {
 $('.eat-btn').on('click', () => {
     $('body').css('background-size', 'cover');
     $('body').css('background-attachment', 'fixed');
-    $('body').css('background-image', 'url(imgs/pexels-free-nature-stock-1376766.jpg)');
+    $('body').css('background-image', 'url(./imgs/pexels-free-nature-stock-1376766.jpg)');
     $('h1').css('color', '#fff');
     $('.play-btn').css('color', '#FFF');
     $('.eat-btn').css('color', '#FFF');
@@ -168,7 +168,7 @@ $('.eat-btn').on('click', () => {
 $('.sleep-btn').on('click', () => {
     $('body').css('background-size', 'cover');
     $('body').css('background-attachment', 'fixed');
-    $('body').css('background-image', 'url(imgs/pexels-min-an-813269.jpg)');
+    $('body').css('background-image', 'url(./imgs/pexels-min-an-813269.jpg)');
     $('h1').css('color', '#EBEC4F');
     $('.play-btn').css('color', '#EBEC4F');
     $('.eat-btn').css('color', '#EBEC4F');
@@ -185,7 +185,7 @@ $('.sleep-btn').on('click', () => {
 $('.play-btn').on('click', () => {
     $('body').css('background-size', 'cover');
     $('body').css('background-attachment', 'fixed');
-    $('body').css('background-image', 'url(imgs/pexels-free-nature-stock-1376766.jpg)');
+    $('body').css('background-image', 'url(./imgs/pexels-free-nature-stock-1376766.jpg)');
     $('h1').css('color', '#fff');
     $('.play-btn').css('color', '#FFF');
     $('.eat-btn').css('color', '#FFF');
